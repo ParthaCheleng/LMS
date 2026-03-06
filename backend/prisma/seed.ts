@@ -30,16 +30,16 @@ async function main() {
 
     // Create subjects for the 10 categories
     const subjectsData = [
-        { title: 'React Essentials', slug: 'react-essentials', category: 'Frontend', description: 'Learn React from the ground up — components, props, state, hooks, and routing.', price: 29.99 },
-        { title: 'Node.js Backend Development', slug: 'nodejs-backend', category: 'Backend', description: 'Build production-ready REST APIs with Node.js and Express.', price: 39.99 },
-        { title: 'Fullstack Next.js Masterclass', slug: 'nextjs-masterclass', category: 'Fullstack', description: 'Build end-to-end applications with Next.js App Router and Prisma.', price: 49.99 },
-        { title: 'Cybersecurity Fundamentals', slug: 'cybersecurity-fundamentals', category: 'Cybersecurity', description: 'Learn the core principles of network security, cryptography, and risk management.', price: 0 },
-        { title: 'Blockchain & Smart Contracts', slug: 'blockchain-smart-contracts', category: 'Blockchain', description: 'Understand blockchain technology and write your first Solidity smart contracts.', price: 59.99 },
-        { title: 'Object-Oriented Programming Patterns', slug: 'oop-patterns', category: 'OOPs', description: 'Master design patterns and SOLID principles to write robust object-oriented code.', price: 19.99 },
-        { title: 'AI & Machine Learning 101', slug: 'ai-ml-101', category: 'AI', description: 'Introduction to neural networks, models, and generative AI concepts.', price: 69.99 },
-        { title: 'Python for Data Science', slug: 'python-data-science', category: 'Python', description: 'Learn Python programming with a focus on data analysis and visualization using pandas.', price: 34.99 },
-        { title: 'Java Spring Boot Microservices', slug: 'java-spring-boot', category: 'Java', description: 'Learn how to build scalable microservices architecture using Java and Spring Boot.', price: 44.99 },
-        { title: 'Angular Mastery', slug: 'angular-mastery', category: 'Angular', description: 'Comprehensive guide to building enterprise-level applications with Angular and RxJS.', price: 39.99 }
+        { title: 'React Essentials', slug: 'react-essentials', category: 'Frontend', description: 'Learn React from the ground up — components, props, state, hooks, and routing.', price: 29.99, thumbnail: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&h=400&fit=crop' },
+        { title: 'Node.js Backend Development', slug: 'nodejs-backend', category: 'Backend', description: 'Build production-ready REST APIs with Node.js and Express.', price: 39.99, thumbnail: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop' },
+        { title: 'Fullstack Next.js Masterclass', slug: 'nextjs-masterclass', category: 'Fullstack', description: 'Build end-to-end applications with Next.js App Router and Prisma.', price: 49.99, thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop' },
+        { title: 'Cybersecurity Fundamentals', slug: 'cybersecurity-fundamentals', category: 'Cybersecurity', description: 'Learn the core principles of network security, cryptography, and risk management.', price: 0, thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop' },
+        { title: 'Blockchain & Smart Contracts', slug: 'blockchain-smart-contracts', category: 'Blockchain', description: 'Understand blockchain technology and write your first Solidity smart contracts.', price: 59.99, thumbnail: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=600&h=400&fit=crop' },
+        { title: 'Object-Oriented Programming Patterns', slug: 'oop-patterns', category: 'OOPs', description: 'Master design patterns and SOLID principles to write robust object-oriented code.', price: 19.99, thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop' },
+        { title: 'AI & Machine Learning 101', slug: 'ai-ml-101', category: 'AI', description: 'Introduction to neural networks, models, and generative AI concepts.', price: 69.99, thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop' },
+        { title: 'Python for Data Science', slug: 'python-data-science', category: 'Python', description: 'Learn Python programming with a focus on data analysis and visualization using pandas.', price: 34.99, thumbnail: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop' },
+        { title: 'Java Spring Boot Microservices', slug: 'java-spring-boot', category: 'Java', description: 'Learn how to build scalable microservices architecture using Java and Spring Boot.', price: 44.99, thumbnail: 'https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=600&h=400&fit=crop' },
+        { title: 'Angular Mastery', slug: 'angular-mastery', category: 'Angular', description: 'Comprehensive guide to building enterprise-level applications with Angular and RxJS.', price: 39.99, thumbnail: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=400&fit=crop' }
     ];
 
     const createdSubjects = [];
@@ -52,7 +52,8 @@ async function main() {
                 description: sub.description,
                 isPublished: true,
                 price: sub.price,
-                currency: 'USD'
+                currency: 'USD',
+                thumbnail: sub.thumbnail
             }
         });
         createdSubjects.push(created);

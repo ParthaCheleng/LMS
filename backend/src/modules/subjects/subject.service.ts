@@ -14,6 +14,7 @@ export async function listSubjects() {
         category: s.category,
         price: s.price,
         currency: s.currency,
+        thumbnail: s.thumbnail,
         sectionsCount: s._count.sections,
         createdAt: s.createdAt,
         updatedAt: s.updatedAt,

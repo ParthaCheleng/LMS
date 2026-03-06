@@ -15,6 +15,7 @@ import progressRoutes from './modules/progress/progress.routes';
 import healthRoutes from './modules/health/health.routes';
 import enrollmentRoutes from './modules/enrollments/enrollment.routes';
 import userRoutes from './modules/users/user.routes';
+import chatRoutes from './modules/chat/chat.routes';
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/progress', progressRoutes);
 app.use('/api/health', healthRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/chat', chatRoutes);
 
 // Global error handler (must be last)
 app.use(errorHandler);

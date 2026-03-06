@@ -20,6 +20,10 @@ export const env = {
 
     // Cookie
     COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || 'localhost',
+
+    // HuggingFace AI
+    HF_TOKEN: process.env.HF_TOKEN || '',
+    HF_MODEL_ID: process.env.HF_MODEL_ID || 'mistralai/Voxtral-Mini-4B-Realtime-2602',
 } as const;
 
 // Validate required env vars at startup

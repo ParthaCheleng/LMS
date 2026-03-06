@@ -13,6 +13,7 @@ export async function findAll() {
             category: true,
             price: true,
             currency: true,
+            thumbnail: true,
             createdAt: true,
             updatedAt: true,
             _count: {

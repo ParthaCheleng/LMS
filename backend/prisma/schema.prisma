@@ -31,6 +31,7 @@ model Subject {
   category    String   @default("Uncategorized")
   price       Float    @default(0)
   currency    String   @default("USD")
+  thumbnail   String?  @db.Text
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 

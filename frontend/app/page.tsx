@@ -15,6 +15,7 @@ interface Subject {
     sectionsCount: number;
     price?: number;
     currency?: string;
+    thumbnail?: string;
     enrollmentStatus?: 'enrolled' | 'not-enrolled';
 }
 
@@ -269,8 +270,12 @@ export default function HomePage() {
                                         className="card flex flex-col items-start text-left h-full hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
                                         style={{ animationDelay: `${index * 50}ms` }}
                                     >
-                                        <div className="h-40 w-full bg-surface-100 dark:bg-surface-950 rounded-lg mb-4 flex items-center justify-center overflow-hidden border border-surface-200 dark:border-surface-800 cursor-pointer" onClick={() => router.push(`/subjects/${subject.slug}`)}>
-                                            <span className="text-4xl">📚</span>
+                                        <div className="h-44 w-full bg-surface-100 dark:bg-surface-950 rounded-lg mb-4 overflow-hidden border border-surface-200 dark:border-surface-800 cursor-pointer" onClick={() => router.push(`/subjects/${subject.slug}`)}>
+                                            {subject.thumbnail ? (
+                                                <img src={subject.thumbnail} alt={subject.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">📚</span></div>
+                                            )}
                                         </div>
 
                                         <div className="flex items-center gap-2 mb-2">
