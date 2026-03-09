@@ -45,7 +45,7 @@ export default function SubjectOverviewPage() {
                     try {
                         const enrollmentsResponse = await apiClient.get('/enrollments');
                         const isUserEnrolled = enrollmentsResponse.data.enrollments.some(
-                            (e: any) => e.id === subjectId
+                            (e: any) => e.id === subjectId || e.slug === subjectId || e.id === data.subject.id
                         );
                         setIsEnrolled(isUserEnrolled);
 

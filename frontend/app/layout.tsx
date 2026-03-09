@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 
 import HeaderAuth from '@/components/HeaderAuth';
-
 import ThemeProvider from '@/components/ThemeProvider';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function RootLayout({
     children,
@@ -42,6 +42,8 @@ export default function RootLayout({
                     <main className="pt-16">
                         {children}
                     </main>
+
+                    <ChatWidget />
                 </ThemeProvider>
             </body>
         </html>

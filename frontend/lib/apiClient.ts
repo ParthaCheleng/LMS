@@ -55,7 +55,11 @@ apiClient.interceptors.response.use(
     async (error: AxiosError) => {
         const originalRequest = error.config as InternalAxiosRequestConfig & { _retry?: boolean };
 
-        if (error.response?.status === 401 && !originalRequest._retry) {
+        const isAuthEndpoint = originalRequest.url === '/auth/login' ||
+            originalRequest.url === '/auth/refresh' ||
+            originalRequest.url === '/auth/register';
+
+        if (error.response?.status === 401 && !originalRequest._retry && !isAuthEndpoint) {
             if (isRefreshing) {
                 // Queue this request while refresh is in progress
                 return new Promise((resolve, reject) => {
